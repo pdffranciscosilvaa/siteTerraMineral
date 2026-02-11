@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Mineral | Soluções em Mineração e Engenharia</title>
+  
+  <link rel="shortcut icon" href="./imgs/favicon1.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./frontend/css/style.css">
+  <script src="./frontend/js/teste.js" defer></script>  
+  <script src="./frontend/js/modal.js" defer></script>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>Soluções de Engenharia para Mineração</span>
+      <span>Suporte: +55 (48) 4000-0000</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <img src="./imgs/TerraMineralLogo.png" alt="Terra Mineral Logo">
+      </a>
+
+      <nav>
+        <ul class="desktop-nav" id="navbar">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <span class="nav-link">Serviços Técnicos <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon></span>
+            <ul class="dropdown">
+              <li><a href="#batimetria">Batimetria</a></li>
+              <li><a href="#topografia">Topografia LiDAR</a></li>
+              <li><a href="#geofisica">Sondagem Geotécnica</a></li>
+              <li><a href="#">Consultoria Ambiental</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="nav-link">Sobre Nós</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+<div class="header-actions">
+
+  <!-- BUSCA -->
+  <div class="input-wrapper">
+
+    <button class="icon" type="button">
+      <svg
+        width="25px"
+        height="25px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M22 22L20 20"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+
+    <input
+      type="text"
+      id="service-search"
+      class="input"
+      placeholder="Buscar serviços..."
+    />
+
+    <!-- BOTÃO LIMPAR -->
+    <button id="clear-search" class="clear-btn">✕</button>
+
+  </div>
+
+
+  <!-- BOTÃO ORÇAMENTO -->
+  <button class="btn-quote" id="btn-quote-summary">
+    <ion-icon name="document-text-outline"></ion-icon>
+    <span class="desktop-only">Orçamento</span>
+    <span class="count-badge" id="quote-count">0</span>
+  </button>
+
+
+  <!-- MENU MOBILE -->
+  <button class="mobile-toggle" id="mobile-menu-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+
+</div>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag">Tecnologia de Ponta</span>
+          <h1>Precisão Científica para Grandes Projetos</h1>
+          <p>Mapeamento 3D, LiDAR e Inteligência Geográfica para maximizar a eficiência da sua operação de mineração.</p>
+          <a href="#services" class="btn-primary">Explorar Soluções</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nossas Especialidades</h2>
+          <p>Serviços técnicos executados com rigor metodológico.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/batimetria.jpg" alt="Batimetria">
+            </div>
+            <div class="card-content">
+              <span class="badge">Hidrografia</span>
+              <h3 class="card-title">Batimetria</h3>
+              <p style="color: #666; font-size: 0.9rem;">Mapeamento detalhado do fundo de corpos d'água com precisão sub-métrica.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Prazo: 3-7 dias</span>
+                <button class="btn-add" onclick="addToQuote('Batimetria', 5000)">
+                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/topografia.jpg" alt="Topografia">
+            </div>
+            <div class="card-content">
+              <span class="badge">Aerofotogrametria</span>
+              <h3 class="card-title">Topografia LiDAR</h3>
+              <p style="color: #666; font-size: 0.9rem;">Modelos Digitais de Terreno (MDT) penetrando vegetação densa para topografia real.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Precisão: 2cm</span>
+                <button class="btn-add" onclick="addToQuote('Topografia LiDAR', 5000)">
+                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/img01.jpeg" alt="Geofísica e Outros">
+            </div>
+            <div class="card-content">
+              <span class="badge">Prospecção</span>
+              <h3 class="card-title">Geofísica & Sondagem</h3>
+              <p style="color: #666; font-size: 0.9rem;">Métodos não invasivos, magnetometria e eletrorresistividade para estudos de subsolo.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Relatório Completo</span>
+                <button class="btn-add" onclick="addToQuote('Geofísica Terrestre', 5000)">
+                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          
+          <div class="form-box shadow-md">
+            <h2 style="color: var(--primary-dark); margin-bottom: 20px;">Solicitar Proposta</h2>
+            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="input-group">
+                <label>Nome Corporativo / Empresa</label>
+                <input type="text" class="form-control" placeholder="Ex: Mineradora Vale do Rio..." required>
+              </div>
+              <div class="input-group">
+                <label>E-mail Comercial</label>
+                <input type="email" class="form-control" placeholder="nome@empresa.com" required>
+              </div>
+              <div class="input-group">
+                <label>Detalhes do Escopo</label>
+                <textarea class="form-control" rows="4" placeholder="Descreva a área, localização e objetivos..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitação</button>
+            </form>
+          </div>
+
+          <div class="info-box">
+            <div class="info-item">
+              <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+              <div>
+                <h4>Atendimento 24/7</h4>
+                <p style="color: var(--text-muted);">+55 (48) 4000-0000</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+              <div>
+                <h4>Envie seu Projeto</h4>
+                <p style="color: var(--text-muted);">comercial@terramineral.com.br</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+              <div>
+                <h4>Localização</h4>
+                <p style="color: var(--text-muted);">Rua Neri Francisco Campos, 370, Tijucas - SC<br>Brasil</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: var(--primary-dark); color: white; padding: 40px 0; text-align: center; font-size: 14px;">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Terra Mineral. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/554891573130" target="_blank" class="whatsapp-float">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+
+  <div id="toast-container"></div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <div id="quote-modal" class="quote-modal">
+  <div class="quote-box">
+
+    <div class="quote-header">
+      <h3>Seu Orçamento</h3>
+      <button id="close-quote">✕</button>
+    </div>
+
+    <div id="quote-list"></div>
+
+    <div class="quote-footer">
+      <strong>Total: R$ <span id="quote-total">0</span></strong>
+
+      <button id="send-whatsapp" class="btn-primary">
+        Enviar para WhatsApp
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
