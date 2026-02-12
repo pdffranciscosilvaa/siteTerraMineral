@@ -1,0 +1,70 @@
+    /* Estilos específicos para a página Sobre */
+    .about-hero {
+      padding: 100px 0 60px;
+      background: linear-gradient(to right, #f8fafc, #eff6ff);
+      text-align: center;
+    }
+
+    .history-section { padding: 80px 0; }
+    
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .history-content h2 { color: var(--primary-dark); margin-bottom: 20px; font-size: 2rem; }
+    .history-content p { color: #64748b; line-height: 1.8; margin-bottom: 15px; }
+
+    .history-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Cards da Equipe */
+    .team-section { padding: 80px 0; background: #f8fafc; }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .team-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+
+    .team-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #e2e8f0; /* Placeholder caso não tenha foto */
+    }
+
+    .team-info { padding: 20px; }
+    .team-info h4 { color: var(--primary-dark); margin-bottom: 5px; }
+    .team-info span { color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+    
+    .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .social-links a { color: #94a3b8; font-size: 1.2rem; transition: 0.3s; }
+    .social-links a:hover { color: var(--primary-main); }
+
+    @media (max-width: 768px) {
+      .history-grid { grid-template-columns: 1fr; }
+    }

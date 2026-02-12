@@ -1,0 +1,133 @@
+    /* =========================================
+       CSS ESPECÍFICO DA PÁGINA DE PORTFÓLIO
+       ========================================= */
+       
+    /* Hero Menor para Páginas Internas */
+    .page-hero {
+      height: 350px;
+      background: linear-gradient(var(--primary-dark), rgba(30, 58, 138, 0.7)), url('./imgs/topografia.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 0; /* Remove margem se houver */
+    }
+
+    .page-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .breadcrumb { font-size: 0.9rem; opacity: 0.8; }
+    .breadcrumb a { color: var(--accent); font-weight: 600; }
+
+    /* Filtros de Categoria */
+    .portfolio-filter {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 50px 0;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      background: white;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary-main);
+      color: white;
+      border-color: var(--primary-main);
+      transform: translateY(-2px);
+    }
+
+    /* Grid de Projetos */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      padding-bottom: 80px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: 0.3s;
+      display: flex; /* Para layout interno */
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+    }
+
+    .project-img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-body { padding: 25px; flex-grow: 1; }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    .tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      background: #eff6ff; /* Azul clarinho */
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .project-footer {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .tech-specs {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    /* Animação simples para filtro */
+    .project-card.hide { display: none; }
+    .project-card.show { animation: fadeIn 0.5s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
