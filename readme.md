@@ -58,7 +58,7 @@ Abra o arquivo index.html em seu navegador.
 👨‍💻 Autor
 Francisco Lisbôa
 
-LinkedIn: Seu Link Aqui
+LinkedIn: 
 
 Email: ...
 
