@@ -1,28 +1,55 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terra Mineral | Soluções em Mineração e Engenharia</title>
-  
+
   <link rel="shortcut icon" href="./imgs/favicon1.png" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./frontend/css/style.css">
-  <script src="./frontend/js/teste.js" defer></script>  
   <script src="./frontend/js/modal.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Terra Mineral",
+  "image": "https://site-teste-terra-mineral.netlify.app//imgs/TerraMineralLogo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Neri Francisco Campos, 370",
+    "addressLocality": "Tijucas",
+    "addressRegion": "SC",
+    "postalCode": "88200-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.2423,
+    "longitude": -48.6341
+  },
+  "url": "https://terramineral.com.br",
+  "telephone": "+554840000000"
+}
+</script>
+
 </head>
 
 <body>
 
   <div class="top-bar">
-    <div class="container">
-      <span>Soluções de Engenharia para Mineração</span>
-      <span>Suporte: +55 (48) 4000-0000</span>
+  <div class="container" style="display: flex; justify-content: space-between;">
+    <span><ion-icon name="time-outline"></ion-icon> Seg - Sex: 08:00 - 18:00</span>
+    <div style="display: flex; gap: 20px;">
+      <span><ion-icon name="mail-outline"></ion-icon>  comercial@terramineral.com.br</span>
+      <span><ion-icon name="call-outline"></ion-icon>  +55 (48) 99853-9413</span>
     </div>
   </div>
+</div>
 
   <header>
     <div class="container header-content">
@@ -124,12 +151,16 @@
 
     <section class="partners-section">
   <div class="container">
-    <p class="partners-title">Empresas que confiam na nossa precisão</p>
+    <p class="partners-title">Empresas que confiam na nossa precisão (Mudar depois para os nossos parceiros)</p>
     <div class="partners-grid">
-      <img src="./imgs/logo-vale.png" alt="Parceiro">
-      <img src="./imgs/logo-csn.png" alt="Parceiro">
-      <img src="./imgs/logo-anglo.png" alt="Parceiro">
-      <img src="./imgs/logo-votorantim.png" alt="Parceiro">
+
+      <!-- ===== EXEMPLOS DE EMPRESAS PARCEIRAS
+       (DEPOIS TROCAR CONFORME OS PARCEIROS REAIS DA TERRA MINERAL!!!!) ===== -->
+       
+      <img src="./imgs/exemploVale.png" alt="Parceiro">
+      <img src="./imgs/exemploCsn.png" alt="Parceiro">
+      <img src="./imgs/exemploAngloAmerican.png" alt="Parceiro">
+      <img src="./imgs/Votorantim.jpg" alt="Parceiro">
     </div>
   </div>
 </section>
@@ -152,9 +183,10 @@
               <p style="color: #666; font-size: 0.9rem;">Mapeamento detalhado do fundo de corpos d'água com precisão sub-métrica.</p>
               <div class="card-meta">
                 <span style="font-size: 12px; font-weight: 600; color: #888;">Prazo: 3-7 dias</span>
-                <button class="btn-add" onclick="addToQuote('Batimetria', 5000)">
-                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
-                </button>
+               <button class="btn-add" onclick="addToQuote('Batimetria')">
+  <span>Adicionar</span>
+  <ion-icon name="add-circle-outline"></ion-icon> 
+</button>
               </div>
             </div>
           </div>
@@ -169,8 +201,8 @@
               <p style="color: #666; font-size: 0.9rem;">Modelos Digitais de Terreno (MDT) penetrando vegetação densa para topografia real.</p>
               <div class="card-meta">
                 <span style="font-size: 12px; font-weight: 600; color: #888;">Precisão: 2cm</span>
-                <button class="btn-add" onclick="addToQuote('Topografia LiDAR', 5000)">
-                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                <button class="btn-add" onclick="addToQuote('Topografia LiDAR')">
+                  Adicionar <ion-icon name="add-circle-outline" ></ion-icon>
                 </button>
               </div>
             </div>
@@ -186,8 +218,8 @@
               <p style="color: #666; font-size: 0.9rem;">Métodos não invasivos, magnetometria e eletrorresistividade para estudos de subsolo.</p>
               <div class="card-meta">
                 <span style="font-size: 12px; font-weight: 600; color: #888;">Relatório Completo</span>
-                <button class="btn-add" onclick="addToQuote('Geofísica Terrestre', 5000)">
-                  Adicionar <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                <button class="btn-add" onclick="addToQuote('Geofísica Terrestre')">
+                  Adicionar <ion-icon name="add-circle-outline" ></ion-icon>
                 </button>
               </div>
             </div>
@@ -203,11 +235,11 @@
       <span class="stat-label">Projetos Executados</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">12</span>
+      <span class="stat-number">20</span>
       <span class="stat-label">Anos de Mercado</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">5k</span>
+      <span class="stat-number">10k</span>
       <span class="stat-label">Hectares Mapeados</span>
     </div>
     <div class="stat-item">
@@ -217,20 +249,36 @@
   </div>
 </section>
 
-<section style="padding: 60px 0;">
+
+
+<section class="workflow-section" style="padding: 80px 0; background: #fdfdfd;">
   <div class="container">
-    <div class="cta-box">
-      <h3>Tem um desafio semelhante?</h3>
-      <p>Nossa equipe técnica analisa seu projeto em até 24 horas.</p>
-      
-      <a href="https://wa.me/554891573130?text=Olá! Gostaria de solicitar um estudo técnico para um projeto de mineração/engenharia." 
-         target="_blank" 
-         style="text-decoration: none; display: inline-block; margin-top: 20px;">
-        <button class="btn-primary btn-pulse" style="cursor: pointer;">
-          SOLICITAR ESTUDO TÉCNICO
-        </button>
-      </a>
-      
+    <div class="section-title">
+      <h2>Nosso Método de Atuação</h2>
+      <p>Do primeiro contato à entrega técnica, garantimos rigor e precisão.</p>
+    </div>
+    
+    <div class="workflow-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="search-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Diagnóstico</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Análise detalhada do escopo e desafios geográficos do projeto.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+       <ion-icon name="rocket-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Mobilização</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Deslocamento de equipe e equipamentos de alta tecnologia para o campo.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="layers-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Processamento</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Tratamento dos dados brutos com inteligência geográfica e modelagem 3D.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="ribbon-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Consultoria</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Entrega de relatórios técnicos certificados e suporte à tomada de decisão.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -262,8 +310,8 @@
             <div class="info-item">
               <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
               <div>
-                <h4>Atendimento 24/7</h4>
-                <p style="color: var(--text-muted);">+55 (48) 4000-0000</p>
+                <h4>Atendimento</h4>
+                <p style="color: var(--text-muted);">+55 (48) 9157-3130</p>
               </div>
             </div>
             <div class="info-item">
@@ -273,13 +321,41 @@
                 <p style="color: var(--text-muted);">comercial@terramineral.com.br</p>
               </div>
             </div>
-            <div class="info-item">
-              <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
-              <div>
-                <h4>Localização</h4>
-                <p style="color: var(--text-muted);">Rua Neri Francisco Campos, 370, Tijucas - SC<br>Brasil</p>
-              </div>
-            </div>
+           <div class="info-item location-item">
+  <!-- <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+  <div>
+    <h4>Localização</h4>
+    <p style="color: var(--text-muted); margin-bottom: 10px;">
+      Rua Neri Francisco Campos, 370, Tijucas - SC<br>Brasil
+    </p>
+    <a href="https://maps.app.goo.gl/sEXP2PQdTYanCWMWA" target="_blank" class="map-link">
+      Visualizar no Google Maps <ion-icon name="arrow-forward-outline"></ion-icon>
+    </a>
+  </div>
+</div> -->
+
+<div class="info-item" style="flex-direction: column; align-items: flex-start;">
+  <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+    <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+    <div>
+      <h4>Localização</h4>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Rua Neri Francisco Campos, 370, Tijucas - SC</p>
+
+      <div style="font-family: 'Courier New', monospace; font-size: 11px; color: var(--primary-color); letter-spacing: 0.5px; opacity: 0.8;">
+      GEO: 27°14'19.9"S 48°38'11.4"W
+    </div>
+    </div>
+  </div>
+
+  <div class="mini-map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3547.3718910466146!2d-48.63907772476355!3d-27.23886347645435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8a961a0306c0f%3A0xabd2e45ad0085de0!2sR.%20Neri%20Francisco%20de%20Campos%2C%20370%2C%20Tijucas%20-%20SC%2C%2088200-000%2C%20Brasil!5e0!3m2!1spt-PT!2sus!4v1771006121538!5m2!1spt-PT!2sus" 
+      width="100%" 
+      height="150" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy"></iframe>
+  </div>
+</div>
           </div>
 
         </div>
@@ -288,24 +364,70 @@
 
   </main>
 
-  <footer style="background: var(--primary-dark); color: white; padding: 40px 0; text-align: center; font-size: 14px;">
-    <div class="container">
-      <p>&copy; <span id="year">2026</span> Terra Mineral. Todos os direitos reservados.</p>
+ <footer class="footer-main">
+  <div class="container footer-grid">
+    
+    <div class="footer-col about-col">
+      <img src="./imgs/TerraMineralLogo.png" alt="Terra Mineral" class="footer-logo">
+      <div class="footer-brand-text">
+        <span class="brand-title">TERRA MINERAL</span>
+        <span class="brand-subtitle">MINERAÇÃO E MEIO AMBIENTE</span>
+      </div>
+      <p class="footer-description">
+        Soluções avançadas com precisão científica e tecnologia LiDAR para os maiores players do mercado de engenharia.
+      </p>
     </div>
 
-    <div class="footer-certs" style="margin-bottom: 20px;">
-  <span style="display:block; font-size: 12px; opacity: 0.6; margin-bottom: 10px; text-transform: uppercase;">Nossas Certificações</span>
-  <div style="display: flex; justify-content: center; gap: 15px;">
-    <span class="cert-badge">CREA-SC</span>
-    <!-- <span class="cert-badge">ISO 9001</span> -->
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Serviços Técnicos</a></li>
+        <li><a href="./frontend/html/sobre.html">Sobre a Empresa</a></li>
+        <li><a href="#contact">Solicitar Orçamento</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Especialidades</h4>
+      <ul class="footer-specialties">
+        <li><ion-icon name="chevron-forward-outline"></ion-icon> Batimetria Técnica</li>
+        <li><ion-icon name="chevron-forward-outline"></ion-icon> Topografia LiDAR</li>
+        <li><ion-icon name="chevron-forward-outline"></ion-icon> Geofísica Terrestre</li>
+        <li><ion-icon name="chevron-forward-outline"></ion-icon> Consultoria Mineral</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Conecte-se</h4>
+      <div class="social-icons">
+        <a href="#" class="social-link" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#" class="social-link" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+      </div>
+      <div class="footer-contact-info">
+        <p><ion-icon name="call-outline"></ion-icon> (48) 9157-3130</p>
+        <p><ion-icon name="mail-outline"></ion-icon> comercial@terramineral.com.br</p>
+      </div>
+    </div>
+
   </div>
-</div>
 
-  </footer>
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <p>&copy; 2026 <strong>Terra Mineral</strong>. Todos os direitos reservados.</p>
+      <div class="crea-tag">Registro Profissional: CREA-SC</div>
+    </div>
+  </div>
+</footer>
 
-  <a href="https://wa.me/5548998539413" target="_blank" class="whatsapp-float">
+  <div class="whatsapp-container">
+  <div class="whatsapp-tooltip" id="whatsapp-tooltip">
+    Dúvidas técnicas? Fale com o engenheiro!
+  </div>
+  <a href="https://wa.me/554891573130" target="_blank" class="whatsapp-float">
     <ion-icon name="logo-whatsapp"></ion-icon>
   </a>
+</div>
 
   <div id="toast-container"></div>
 
@@ -324,17 +446,20 @@
     <div id="quote-list"></div>
 
     <div class="quote-footer">
-      <strong>Total: R$ <span id="quote-total">0</span></strong>
+  <p style="font-size: 13px; color: #666; margin-bottom: 5px;">
+    Ao enviar, você falará diretamente com nosso consultor técnico.
+  </p>
 
-      <button id="send-whatsapp" class="btn-primary">
-        Enviar para WhatsApp
-      </button>
-    </div>
-
-  </div>
+  <button id="send-whatsapp" class="btn-primary">
+    <ion-icon name="logo-whatsapp" style="margin-right: 8px;"></ion-icon>
+    Enviar para WhatsApp
+  </button>
 </div>
 
-
+    </div>
+  </div>
+  
+</div>
 
 </body>
 </html>

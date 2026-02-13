@@ -87,8 +87,17 @@ header {
 }
 
 .logo img {
-  max-height: 65px;
+  max-height: 90px; /* Aumentamos de 65px para 90px */
   width: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Adiciona um movimento suave */
+}
+
+/* Dica: no mobile, é melhor manter um pouco menor para não sumir com o menu */
+@media (max-width: 768px) {
+  .logo img {
+    max-height: 70px; 
+  }
 }
 
 .desktop-nav {
@@ -191,7 +200,7 @@ header {
   height: 600px;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.6)), url('../../imgs/topografia.jpg');
+  background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.6)), url('../../imgs/fundo.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -1175,4 +1184,396 @@ html {
     .about-hero h1 {
         font-size: 2.2rem;
     }
+}
+
+/* Efeito de Vidro (Glassmorphism) no Header ao dar Scroll */
+header.sticky {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Deixar as imagens dos parceiros em escala de cinza, ficando coloridas no hover */
+.partners-grid img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.4s ease;
+}
+
+.partners-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Botão de WhatsApp com pulso de atenção discreto */
+.whatsapp-float {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    animation: pulse-green 5s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Efeito de escala de cinza para parceiros - Transmite elegância */
+.partners-grid img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    max-height: 50px; /* Padroniza altura dos logos */
+    object-fit: contain;
+}
+
+.partners-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Animação de pulso no WhatsApp para chamar atenção sem ser irritante */
+.whatsapp-float {
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Feedback visual ao adicionar item (Classe que será usada via JS) */
+.cart-bump {
+    animation: bump 0.4s ease-out;
+}
+
+@keyframes bump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); color: #ffcc00; }
+    100% { transform: scale(1); }
+}
+
+
+.btn-primary, .btn-add {
+  position: relative; /* Essencial para o ripple se posicionar corretamente */
+  overflow: hidden;    /* ISSO impede o botão de crescer com a animação */
+}
+
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3); /* Cor da ondinha */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+/* ===== MINI MAPA ===== */
+
+.map-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.map-link:hover {
+  text-decoration: underline;
+  gap: 8px; /* Efeito de flechinha andando */
+}
+
+/* Deixa o box de info com um hover suave */
+.info-item {
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.info-item:hover {
+  background: rgba(0,0,0,0.02);
+  transform: translateX(5px);
+}
+
+.mini-map-container {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden; /* Corta as bordas do mapa para ficarem arredondadas */
+  border: 2px solid #eee;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  filter: grayscale(0.2) contrast(1.1); /* Deixa o mapa com um tom mais sóbrio/técnico */
+  transition: all 0.4s ease;
+}
+
+.mini-map-container:hover {
+  filter: grayscale(0); /* O mapa ganha cor total quando o cliente passa o mouse */
+  transform: scale(1.02);
+  border-color: var(--primary-color);
+}
+
+
+/* ======= RODAPÉ ======= */
+
+.footer-main {
+  background: #121416; /* Um grafite muito escuro, mais moderno que o preto puro */
+  color: #ffffff;
+  padding: 80px 0 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+/* Coluna da Marca */
+.footer-logo {
+  max-height: 75px;
+  margin-bottom: 20px;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #adb5bd;
+}
+
+/* Títulos das colunas */
+.footer-col h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+/* Links e Listas */
+.footer-links, .footer-specialties {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .footer-specialties li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #adb5bd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.footer-links li a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+/* Ícones Sociais */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Rodapé Final */
+.footer-bottom {
+  background: #0a0c0d;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.crea-tag {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .bottom-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* Efeito sutil ao passar o mouse */
+.navbar img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Container que segura os dois elementos */
+.whatsapp-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex !important;
+  flex-direction: row !important; /* Obriga a ficar um ao lado do outro */
+  align-items: center !important;
+  z-index: 9999;
+  pointer-events: none; /* Container não bloqueia cliques no site */
+}
+
+/* O Balão de Texto */
+.whatsapp-tooltip {
+  pointer-events: auto;
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  
+  /* Garante visibilidade e impede quebra */
+  display: inline-block !important; 
+  white-space: nowrap !important;
+  width: auto !important; 
+  min-width: 200px; /* Dá um tamanho mínimo para ele não sumir */
+  
+  /* Controle de animação */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+/* A Seta do Balão */
+.whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #ffffff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* O Botão Verde */
+.whatsapp-float {
+  pointer-events: auto;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  flex-shrink: 0; /* Impede o botão de amassar caso o texto seja grande */
+}
+
+/* Classe de animação (JS) */
+.whatsapp-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Esconder no mobile para não bugar o layout */
+@media (max-width: 768px) {
+  .whatsapp-tooltip {
+    display: none !important;
+  }
+}
+
+/* Classe de animação */
+.whatsapp-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
