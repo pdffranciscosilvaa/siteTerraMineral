@@ -60,15 +60,6 @@ Francisco Lisbôa
 
 LinkedIn: Seu Link Aqui
 
-Email: comercial@terramineral.com.br
+Email: ...
 
 Empresa: Terra Mineral - Tijucas, SC
-
-
-### Dica para o GitHub:
-Após colar isso no seu `README.md`, não esqueça de dar o **commit** e o **push**:
-1. `git add README.md`
-2. `git commit -m "docs: adiciona readme profissional"`
-3. `git push origin main`
-
-**Precisa que eu adicione mais alguma seção específica, como uma licença ou instruções de contribuição?**
