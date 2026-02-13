@@ -1,60 +1,74 @@
-README - Terra Mineral (Web)
-🌎 Sobre o Projeto
-O site da Terra Mineral é uma plataforma institucional voltada para soluções de engenharia e mineração. O foco principal é a apresentação de serviços de alta precisão, como Batimetria, Topografia LiDAR e Geofísica, permitindo que clientes solicitem orçamentos de forma dinâmica e integrada ao WhatsApp.
+# 🌍 Terra Mineral - Soluções em Mineração e Engenharia
 
-🚀 Funcionalidades
-Menu Dinâmico: Navegação fluida com dropdown de serviços.
+![Versão](https://img.shields.io/badge/version-1.0.0-blue)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-green)
 
-Sistema de Orçamento: Carrinho de serviços que calcula valores estimados e envia os dados diretamente para o WhatsApp da empresa.
+O site da **Terra Mineral** é uma plataforma institucional de alta precisão desenvolvida para apresentar serviços de engenharia mineral, topografia LiDAR e consultoria ambiental. O projeto foi desenhado para transmitir autoridade técnica e facilitar a conversão de leads corporativos através de um sistema de orçamento integrado.
 
-Design Responsivo: Adaptado para dispositivos móveis, tablets e desktops.
+---
 
-Página "Sobre Nós": Seção detalhada com história da empresa e cards da equipe técnica.
+## 🚀 Funcionalidades Principais
 
-Busca em Tempo Real: Filtro de serviços integrado na barra de navegação.
+- **Sistema de Orçamento Dinâmico**: Permite ao usuário selecionar múltiplos serviços e enviar a lista consolidada diretamente para o WhatsApp do consultor técnico.
+- **Mecanismo de Busca**: Filtro em tempo real para localização rápida de especialidades técnicas no catálogo.
+- **SEO & Dados Estruturados**: Implementação de JSON-LD (Schema.org) para garantir que a empresa apareça com informações ricas (endereço, geolocalização e contato) nos motores de busca.
+- **Tooltip Inteligente**: Balão flutuante no WhatsApp com lógica de repetição programada para engajamento do usuário.
+- **Design Responsivo**: Totalmente adaptado para dispositivos móveis com menu lateral (mobile-toggle).
+- **Mapa Técnico**: Integração com Google Maps exibindo coordenadas geodésicas reais.
 
-CTAs de Conversão: Botões com animação de "pulso" para aumentar o engajamento de leads.
+---
 
-🛠️ Tecnologias Utilizadas
-HTML5: Estrutura semântica.
+## 🛠️ Tecnologias Utilizadas
 
-CSS3: Design System baseado em variáveis corporativas, animações customizadas e layouts em Grid/Flexbox.
+* **HTML5 Semântico**: Estruturação focada em acessibilidade e SEO.
+* **CSS3 Moderno**: Uso de variáveis globais, Flexbox e Grid para um layout robusto e limpo.
+* **JavaScript (Vanilla)**: Lógica de manipulação de DOM para o modal de orçamentos e controle do tooltip.
+* **Ionicons**: Biblioteca de ícones vetoriais para interface intuitiva.
+* **Google Fonts**: Integração das fontes *Manrope* e *Poppins* para legibilidade profissional.
 
-JavaScript (ES6+): Lógica do carrinho de orçamento, manipulação de DOM e integração com API do WhatsApp.
+---
 
-IonIcons: Biblioteca de ícones vetoriais.
+## 📂 Estrutura do Projeto
 
-Google Fonts: Tipografia focada em legibilidade (Manrope e Poppins).
+```text
+├── frontend/
+│   ├── css/          # Estilização (style.css)
+│   ├── html/         # Páginas internas (sobre.html)
+│   └── js/           # Lógica do modal, busca e scripts
+├── imgs/             # Ativos visuais, logotipos e fotos de campo
+└── index.html        # Landing Page principal
+⚙️ Como Executar
+Clone o repositório:
 
-📂 Estrutura de Pastas
-Plaintext
-/raiz
-├── /frontend
-│   ├── /css
-│   │   └── style.css      # Estilos globais e componentes
-│   ├── /html
-│   │   └── sobre.html     # Página institucional
-│   └── /js
-│       ├── modal.js       # Lógica do modal de orçamento
-│       └── teste.js       # Scripts gerais e busca
-├── /imgs                  # Ativos visuais (logos, equipe, serviços)
-└── index.html             # Página principal (Landing Page)
-🔧 Como Executar
-Faça o download ou clone este repositório.
+Bash
+git clone [https://github.com/pdffranciscosilvaa/siteTerraMineral.git](https://github.com/pdffranciscosilvaa/siteTerraMineral.git)
+Entre na pasta:
 
-Certifique-se de que a estrutura de pastas mencionada acima seja mantida.
+Bash
+cd siteTerraMineral
+Abra o arquivo index.html em seu navegador.
 
-Abra o arquivo index.html em qualquer navegador moderno.
+📝 Próximas Etapas
+[ ] Implementar galeria de estudos de caso (Case Studies).
 
-Para edição, recomenda-se o uso do VS Code com a extensão Live Server.
+[ ] Adicionar suporte a múltiplos idiomas (Português/Inglês).
 
-📝 Próximas Implementações
-[ ] Implementação de filtros no Portfólio.
+[ ] Refinar animações de entrada (ScrollReveal).
 
-[ ] Animação de contagem numérica na seção de estatísticas.
+👨‍💻 Autor
+Francisco Lisbôa
 
-[ ] Galeria de imagens com Lightbox para os serviços executados.
+LinkedIn: Seu Link Aqui
 
-Desenvolvido por: Francisco Lisbôa/Terra Mineral
+Email: comercial@terramineral.com.br
 
-Contato: ...
+Empresa: Terra Mineral - Tijucas, SC
+
+
+### Dica para o GitHub:
+Após colar isso no seu `README.md`, não esqueça de dar o **commit** e o **push**:
+1. `git add README.md`
+2. `git commit -m "docs: adiciona readme profissional"`
+3. `git push origin main`
+
+**Precisa que eu adicione mais alguma seção específica, como uma licença ou instruções de contribuição?**
