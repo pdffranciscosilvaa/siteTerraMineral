@@ -236,20 +236,30 @@ document.querySelectorAll(".btn-primary").forEach(button => {
 });
 
 /* =============================
-   TOOLTIP WHATSAPP (APARECER E SUMIR)
+    TOOLTIP WHATSAPP (LOOP INFINITO)
 ============================= */
 window.addEventListener('load', () => {
   const tooltip = document.getElementById('whatsapp-tooltip');
   
   if (tooltip) {
-    // 1. Aparece depois de 5 segundos
-    setTimeout(() => {
+    // Função que controla o ciclo de exibir/esconder
+    const mostrarTooltipTemporariamente = () => {
+      // 1. Adiciona a classe para mostrar
       tooltip.classList.add('show');
       
-      // 2. Desaparece depois de 8 segundos (tempo total: 13s)
+      // 2. Agenda para remover a classe após 8 segundos
       setTimeout(() => {
         tooltip.classList.remove('show');
       }, 8000); 
-    }, 5000);
+    };
+
+    // Executa a primeira vez após 5 segundos do carregamento da página
+    setTimeout(mostrarTooltipTemporariamente, 5000);
+
+    // Cria o intervalo para repetir o ciclo a cada 30 segundos (exemplo)
+    // O tempo deve ser maior que o tempo que o tooltip fica aberto (8s)
+    setInterval(() => {
+      mostrarTooltipTemporariamente();
+    }, 30000); // 30000ms = 30 segundos
   }
 });
