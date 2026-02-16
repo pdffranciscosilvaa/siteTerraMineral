@@ -60,6 +60,10 @@ Francisco Lisbôa
 
 LinkedIn: 
 
+<<<<<<< HEAD
 Email: comercial@terramineral.com.br
+=======
+Email: ...
+>>>>>>> 138d402edb195b524616db71ce7cdd4245229b70
 
 Empresa: Terra Mineral - Tijucas, SC
