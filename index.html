@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./frontend/css/style.css">
-  <script src="./frontend/js/modal.js" defer></script>
+  <script src="./frontend/js/principal.js" defer></script>
+  <script src="./frontend/js/scrollbar.js" defer></script>
 
   <script type="application/ld+json">
 {
@@ -32,21 +33,31 @@
     "latitude": -27.2423,
     "longitude": -48.6341
   },
-  "url": "https://terramineral.com.br",
+  "url": "https://site-teste-terra-mineral.netlify.app/",
   "telephone": "+554840000000"
 }
 </script>
 
 </head>
 
-<body>
+<body class="home-page">
 
   <div class="top-bar">
-  <div class="container" style="display: flex; justify-content: space-between;">
-    <span><ion-icon name="time-outline"></ion-icon> Seg - Sex: 08:00 - 18:00</span>
-    <div style="display: flex; gap: 20px;">
-      <span><ion-icon name="mail-outline"></ion-icon>  comercial@terramineral.com.br</span>
-      <span><ion-icon name="call-outline"></ion-icon>  +55 (48) 99853-9413</span>
+  <div class="container top-bar-wrapper">
+    <div class="top-bar-item schedule">
+      <ion-icon name="time-outline"></ion-icon>
+      <span>Seg - Sex: <strong>08:00 - 18:00</strong></span>
+    </div>
+    
+    <div class="top-bar-contact">
+      <a href="mailto:comercial@terramineral.com.br" class="top-bar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>comercial@terramineral.com.br</span>
+      </a>
+      <a href="tel:+5548998539413" class="top-bar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>(48) 99853-9413</span>
+      </a>
     </div>
   </div>
 </div>
@@ -165,6 +176,62 @@
   </div>
 </section>
 
+
+<section class="workflow-section" style="padding: 80px 0; background: #fdfdfd;">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nosso Método de Atuação</h2>
+      <p>Do primeiro contato à entrega técnica, garantimos rigor e precisão.</p>
+    </div>
+    
+    <div class="workflow-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="search-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Diagnóstico</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Análise detalhada do escopo e desafios geográficos do projeto.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+       <ion-icon name="rocket-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Mobilização</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Deslocamento de equipe e equipamentos de alta tecnologia para o campo.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="layers-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Processamento</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Tratamento dos dados brutos com inteligência geográfica e modelagem 3D.</p>
+      </div>
+      <div class="step-card" style="text-align: center;">
+        <ion-icon name="ribbon-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
+        <h4 style="margin-bottom: 10px;">Consultoria</h4>
+        <p style="font-size: 0.9rem; color: #2196f3;">Entrega de relatórios técnicos certificados e suporte à tomada de decisão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-item">
+      <span class="stat-number" data-target="150">+0</span>
+      <span class="stat-label">Projetos Executados</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="20">0</span>
+      <span class="stat-label">Anos de Mercado</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="10000">0k</span>
+      <span class="stat-label">Hectares Mapeados</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="100">0%</span>
+      <span class="stat-label">Aprovação Técnica</span>
+    </div>
+  </div>
+</section>
+
+
     <section id="services" style="padding: 80px 0;">
       <div class="container">
         <div class="section-title">
@@ -184,9 +251,9 @@
               <div class="card-meta">
                 <span style="font-size: 12px; font-weight: 600; color: #888;">Prazo: 3-7 dias</span>
                <button class="btn-add" onclick="addToQuote('Batimetria')">
-  <span>Adicionar</span>
-  <ion-icon name="add-circle-outline"></ion-icon> 
-</button>
+                <span>Adicionar</span>
+            <ion-icon name="add-circle-outline"></ion-icon> 
+        </button>
               </div>
             </div>
           </div>
@@ -224,84 +291,107 @@
               </div>
             </div>
           </div>
+
+             <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/segurancaConsultoria.jpg" alt="Segurança e Consultoria">
+            </div>
+            <div class="card-content">
+              <span class="badge">Prospecção</span>
+              <h3 class="card-title">Segurança e Consultoria</h3>
+              <p style="color: #666; font-size: 0.9rem;">Métodos não invasivos, magnetometria e eletrorresistividade para estudos de subsolo.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Relatório Completo</span>
+                <button class="btn-add" onclick="addToQuote('Segurança e Consultoria')">
+                  Adicionar <ion-icon name="add-circle-outline" ></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+             <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/gestãoRecursosHídricos.jpg" alt="Gestão de Recursos Hídricos">
+            </div>
+            <div class="card-content">
+              <span class="badge">Prospecção</span>
+              <h3 class="card-title">Gestão de Recursos Hídricos</h3>
+              <p style="color: #666; font-size: 0.9rem;">Métodos não invasivos, magnetometria e eletrorresistividade para estudos de subsolo.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Relatório Completo</span>
+                <button class="btn-add" onclick="addToQuote('Gestão de Recursos Hídricos')">
+                  Adicionar <ion-icon name="add-circle-outline" ></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+             <div class="service-card">
+            <div class="card-img-wrapper">
+              <img src="./imgs/img01.jpeg" alt="Geofísica e Outros">
+            </div>
+            <div class="card-content">
+              <span class="badge">Prospecção</span>
+              <h3 class="card-title">Geofísica & Sondagem</h3>
+              <p style="color: #666; font-size: 0.9rem;">Métodos não invasivos, magnetometria e eletrorresistividade para estudos de subsolo.</p>
+              <div class="card-meta">
+                <span style="font-size: 12px; font-weight: 600; color: #888;">Relatório Completo</span>
+                <button class="btn-add" onclick="addToQuote('Geofísica Terrestre')">
+                  Adicionar <ion-icon name="add-circle-outline" ></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="stats-section">
-  <div class="container stats-grid">
-    <div class="stat-item">
-      <span class="stat-number">+150</span>
-      <span class="stat-label">Projetos Executados</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">20</span>
-      <span class="stat-label">Anos de Mercado</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">10k</span>
-      <span class="stat-label">Hectares Mapeados</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">100%</span>
-      <span class="stat-label">Aprovação Técnica</span>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="workflow-section" style="padding: 80px 0; background: #fdfdfd;">
-  <div class="container">
-    <div class="section-title">
-      <h2>Nosso Método de Atuação</h2>
-      <p>Do primeiro contato à entrega técnica, garantimos rigor e precisão.</p>
-    </div>
-    
-    <div class="workflow-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
-      <div class="step-card" style="text-align: center;">
-        <ion-icon name="search-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
-        <h4 style="margin-bottom: 10px;">Diagnóstico</h4>
-        <p style="font-size: 0.9rem; color: #2196f3;">Análise detalhada do escopo e desafios geográficos do projeto.</p>
-      </div>
-      <div class="step-card" style="text-align: center;">
-       <ion-icon name="rocket-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
-        <h4 style="margin-bottom: 10px;">Mobilização</h4>
-        <p style="font-size: 0.9rem; color: #2196f3;">Deslocamento de equipe e equipamentos de alta tecnologia para o campo.</p>
-      </div>
-      <div class="step-card" style="text-align: center;">
-        <ion-icon name="layers-outline" style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
-        <h4 style="margin-bottom: 10px;">Processamento</h4>
-        <p style="font-size: 0.9rem; color: #2196f3;">Tratamento dos dados brutos com inteligência geográfica e modelagem 3D.</p>
-      </div>
-      <div class="step-card" style="text-align: center;">
-        <ion-icon name="ribbon-outline"  style="font-size: 2.5rem; color: var(--primary-color);"></ion-icon>
-        <h4 style="margin-bottom: 10px;">Consultoria</h4>
-        <p style="font-size: 0.9rem; color: #2196f3;">Entrega de relatórios técnicos certificados e suporte à tomada de decisão.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
     <section id="contact" class="contact-section">
       <div class="container">
         <div class="contact-wrapper">
           
-          <div class="form-box shadow-md">
+              <div class="form-box shadow-md">
             <h2 style="color: var(--primary-dark); margin-bottom: 20px;">Solicitar Proposta</h2>
-            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+            <form id="contact-form" action="https://formspree.io/f/mlgwnjbd" method="POST" enctype="multipart/form-data">
+              
               <div class="input-group">
                 <label>Nome Corporativo / Empresa</label>
-                <input type="text" class="form-control" placeholder="Ex: Mineradora Vale do Rio..." required>
+                <input type="text" name="empresa" class="form-control" placeholder="Ex: Mineradora..." required>
               </div>
+
               <div class="input-group">
                 <label>E-mail Comercial</label>
-                <input type="email" class="form-control" placeholder="nome@empresa.com" required>
+                <input type="email" name="email" class="form-control" placeholder="nome@empresa.com" required>
               </div>
+
               <div class="input-group">
                 <label>Detalhes do Escopo</label>
-                <textarea class="form-control" rows="4" placeholder="Descreva a área, localização e objetivos..."></textarea>
+                <textarea name="mensagem" class="form-control" rows="4" placeholder="Descreva a área de interesse e os serviços desejados..."></textarea>
               </div>
+
+            <div class="input-group" style="margin-top: 40px; margin-bottom: 20px;">
+              <label>Anexar Documentação (Opcional)</label>
+              
+              <div class="upload-wrapper-container">
+                <div class="upload-folder-anim">
+                  <div class="front-side">
+                    <div class="tip"></div>
+                    <div class="cover"></div>
+                  </div>
+                  <div class="back-side cover"></div>
+                </div>
+                
+                <label class="upload-label-btn">
+                  <input type="file" name="arquivo_projeto[]" id="file-input" style="display:none;" multiple>
+                  <span id="file-name-text">Escolher arquivos</span>
+                </label>
+              </div>
+
+              <div id="file-list-container" style="margin-top: 10px; font-size: 0.9em; color: #555;"></div>
+
+            </div>
               <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitação</button>
             </form>
           </div>
@@ -322,17 +412,6 @@
               </div>
             </div>
            <div class="info-item location-item">
-  <!-- <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
-  <div>
-    <h4>Localização</h4>
-    <p style="color: var(--text-muted); margin-bottom: 10px;">
-      Rua Neri Francisco Campos, 370, Tijucas - SC<br>Brasil
-    </p>
-    <a href="https://maps.app.goo.gl/sEXP2PQdTYanCWMWA" target="_blank" class="map-link">
-      Visualizar no Google Maps <ion-icon name="arrow-forward-outline"></ion-icon>
-    </a>
-  </div>
-</div> -->
 
 <div class="info-item" style="flex-direction: column; align-items: flex-start;">
   <div style="display: flex; gap: 15px; margin-bottom: 15px;">
@@ -367,15 +446,23 @@
  <footer class="footer-main">
   <div class="container footer-grid">
     
-    <div class="footer-col about-col">
+   <div class="footer-col about-col">
+  <div class="footer-logo-container">
+    <div class="logo-frame">
       <img src="./imgs/TerraMineralLogo.png" alt="Terra Mineral" class="footer-logo">
-      <div class="footer-brand-text">
-        <span class="brand-title">TERRA MINERAL</span>
-        <span class="brand-subtitle">MINERAÇÃO E MEIO AMBIENTE</span>
+    </div>
+    <div class="footer-brand-text">
+      <span class="brand-title">TERRA MINERAL</span>
+      <span class="brand-subtitle">MINERAÇÃO E MEIO AMBIENTE</span>
+    </div>
+  </div>
+  <p class="footer-description">
+    Líder em soluções de engenharia com tecnologia <strong>LiDAR</strong> e precisão científica. Transformando dados complexos em decisões seguras.
+  </p>
+      <div class="social-icons">
+        <a href="#" class="social-link" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#" class="social-link" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
       </div>
-      <p class="footer-description">
-        Soluções avançadas com precisão científica e tecnologia LiDAR para os maiores players do mercado de engenharia.
-      </p>
     </div>
 
     <div class="footer-col">
@@ -391,22 +478,37 @@
     <div class="footer-col">
       <h4>Especialidades</h4>
       <ul class="footer-specialties">
-        <li><ion-icon name="chevron-forward-outline"></ion-icon> Batimetria Técnica</li>
-        <li><ion-icon name="chevron-forward-outline"></ion-icon> Topografia LiDAR</li>
-        <li><ion-icon name="chevron-forward-outline"></ion-icon> Geofísica Terrestre</li>
-        <li><ion-icon name="chevron-forward-outline"></ion-icon> Consultoria Mineral</li>
+        <li><span class="dot"></span> Batimetria Técnica</li>
+        <li><span class="dot"></span> Topografia LiDAR</li>
+        <li><span class="dot"></span> Geofísica Terrestre</li>
+        <li><span class="dot"></span> Consultoria Mineral</li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Conecte-se</h4>
-      <div class="social-icons">
-        <a href="#" class="social-link" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-        <a href="#" class="social-link" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-      </div>
-      <div class="footer-contact-info">
-        <p><ion-icon name="call-outline"></ion-icon> (48) 9157-3130</p>
-        <p><ion-icon name="mail-outline"></ion-icon> comercial@terramineral.com.br</p>
+      <h4>Contatos</h4>
+      <div class="footer-contact-card">
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>Telefone</span>
+            <strong>(48) 9157-3130</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>E-mail</span>
+            <strong>comercial@terramineral.com.br</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>Localização</span>
+            <strong>Tijucas - Santa Catarina, Brasil</strong>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -414,8 +516,11 @@
 
   <div class="footer-bottom">
     <div class="container bottom-content">
-      <p>&copy; 2026 <strong>Terra Mineral</strong>. Todos os direitos reservados.</p>
-      <div class="crea-tag">Registro Profissional: CREA-SC</div>
+      <p>&copy; 2026 <strong>Terra Mineral</strong>. Excelência em Geotecnologia.</p>
+      <div class="footer-tags">
+        <span class="crea-tag">Registro: CREA-SC</span>
+        <span class="status-tag"><span class="pulse"></span> Online para Orçamentos</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -461,5 +566,10 @@
   
 </div>
 
+    <a href="#" id="backToTop" class="back-to-top">  
+       <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="white"/>
+    </svg>
+  </a>
 </body>
 </html>

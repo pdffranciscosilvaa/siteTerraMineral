@@ -143,30 +143,130 @@ function showToast(title, message) {
 
 
 /* =============================
-   FORMULÁRIO DE CONTATO (PÁGINA)
+   FORMULÁRIO DE CONTATO (PÁGINA - EMAIL)
 ============================= */
-function handleFormSubmit(e) {
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
   e.preventDefault();
-  const btn = e.target.querySelector("button");
+  
+  const form = e.target;
+  const btn = form.querySelector("button");
   const originalText = btn.innerText;
 
+  // 1. Efeito Visual (Seu design)
   btn.innerText = "Enviando...";
   btn.style.opacity = "0.7";
+  btn.disabled = true;
 
-  setTimeout(() => {
-    btn.innerText = "Enviado com Sucesso!";
-    btn.style.background = "#2b5a27";
-    btn.style.opacity = "1";
+  // 2. Captura os dados e transforma em JSON real
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
-    showToast("Sucesso", "Entraremos em contato em breve.");
-    e.target.reset();
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: JSON.stringify(data), // Aqui enviamos o JSON que o erro pediu
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json' 
+      }
+    });
 
+    if (response.ok) {
+      // 3. Sucesso (Seu design)
+      btn.innerText = "Enviado com Sucesso!";
+      btn.style.background = "#2b5a27";
+      btn.style.opacity = "1";
+
+      if (typeof showToast === "function") {
+        showToast("Sucesso", "Entraremos em contato em breve.");
+      }
+      
+      form.reset();
+
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = "";
+        btn.disabled = false;
+      }, 3000);
+      
+    } else {
+      throw new Error();
+    }
+  } catch (error) {
+    // 4. Erro
+    btn.innerText = "Erro ao enviar";
+    btn.style.background = "#a32a2a";
+    
     setTimeout(() => {
       btn.innerText = originalText;
       btn.style.background = "";
+      btn.disabled = false;
     }, 3000);
-  }, 1500);
-}
+  }
+});
+
+
+/* ENVIO DE DOCUMENTOS VIA JS */
+
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const btn = form.querySelector("button[type='submit']");
+  const originalText = btn.innerText;
+
+  // Feedback visual
+  btn.innerText = "Enviando...";
+  btn.disabled = true;
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData, 
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      btn.innerText = "Enviado com Sucesso!";
+      btn.style.background = "#2b5a27";
+      form.reset();
+      
+      // Reseta o texto do anexo para o padrão
+      document.getElementById('file-name-text').innerText = "Escolher arquivos";
+      
+      if (typeof showToast === "function") showToast("Sucesso", "Recebemos sua proposta.");
+    } else {
+      throw new Error();
+    }
+  } catch (error) {
+    btn.innerText = "Erro ao enviar";
+    btn.style.background = "#a32a2a";
+  } finally {
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.style.background = "";
+      btn.disabled = false;
+    }, 3000);
+  }
+});
+
+// --- LÓGICA ATUALIZADA PARA MÚLTIPLOS ARQUIVOS ---
+document.getElementById('file-input').addEventListener('change', function() {
+  const fileLabel = document.getElementById('file-name-text');
+  const count = this.files.length;
+
+  if (count === 0) {
+    fileLabel.innerText = "Escolher arquivos";
+  } else if (count === 1) {
+    // Se for apenas 1, mostra o nome dele
+    fileLabel.innerText = this.files[0].name;
+  } else {
+    // Se for mais de 1, mostra a quantidade para não quebrar o layout
+    fileLabel.innerText = `${count} arquivos selecionados`;
+  }
+});
 
 
 /* =============================
@@ -207,17 +307,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =============================
-   MENU MOBILE
+   MENU MOBILE & NAVEGAÇÃO
 ============================= */
 const mobileBtn = document.getElementById("mobile-menu-btn");
 const nav = document.getElementById("navbar");
+// Selecionamos todos os links dentro do menu, inclusive os do dropdown
+const navLinks = document.querySelectorAll("#navbar a");
 
+// Abre e fecha o menu ao clicar no botão hambúrguer
 mobileBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
+// Lógica para fechar o menu ao clicar em um link e rolar suavemente
+navLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+
+    // Verifica se o link é uma âncora (começa com #)
+    if (href.startsWith("#")) {
+      // 1. Fecha o menu mobile imediatamente
+      nav.classList.remove("active");
+
+      // 2. Faz a rolagem suave até a seção
+      const targetId = href;
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        e.preventDefault(); // Previne o salto brusco
+        
+        // Calcula a posição descontando a altura da sua Top Bar + Header (aprox. 100px)
+        const offsetPosition = targetSection.offsetTop - 100;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+    // Se não for # (ex: link para sobre.html), o navegador segue o link normalmente
+  });
+});
+
 /* =============================
-   ANIMAÇÃO RIPPLE BOTÕES
+   ANIMAÇÃO RIPPLE BOTÕES (Mantida)
 ============================= */
 document.querySelectorAll(".btn-primary").forEach(button => {
   button.addEventListener("click", function (e) {
@@ -262,4 +395,53 @@ window.addEventListener('load', () => {
       mostrarTooltipTemporariamente();
     }, 30000); // 30000ms = 30 segundos
   }
+});
+
+
+
+/* =============================
+    NÚMEROS ANIMADOS (EXCLUSIVO)
+============================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.stats-section');
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let animationStarted = false;
+
+  const animate = (el) => {
+    // Garante que o target seja um número puro
+    const target = +el.getAttribute('data-target'); 
+    const duration = 2000; // 2 segundos
+    const stepTime = 20; // atualização a cada 20ms
+    const totalSteps = duration / stepTime;
+    const increment = target / totalSteps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        clearInterval(timer);
+        // Formatação final específica
+        if (target === 10000) el.innerText = "10k";
+        else if (target === 100) el.innerText = "100%";
+        else if (target === 150) el.innerText = "+150";
+        else el.innerText = Math.floor(target);
+      } else {
+        // Formatação durante a contagem
+        if (target === 10000) el.innerText = Math.floor(current / 1000) + "k";
+        else if (target === 100) el.innerText = Math.floor(current) + "%";
+        else if (target === 150) el.innerText = "+" + Math.floor(current);
+        else el.innerText = Math.floor(current);
+      }
+    }, stepTime);
+  };
+
+  // Intersection Observer para rodar apenas quando chegar na seção
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !animationStarted) {
+      animationStarted = true;
+      statNumbers.forEach(num => animate(num));
+    }
+  }, { threshold: 0.5 });
+
+  if (statsSection) observer.observe(statsSection);
 });

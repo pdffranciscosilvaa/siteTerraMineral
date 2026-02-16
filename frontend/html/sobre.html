@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nós | Terra Mineral</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sobre.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap">
+  <script src="../js/scrollbar.js" defer></script>
 </head>
 <body>
 
@@ -43,19 +45,62 @@
       </div>
     </section>
 
-    <section class="history-section">
+    <section class="history-section" class="history-timeline-container">
       <div class="container history-grid">
-        <div class="history-image">
-          <img src="../../imgs/topografia.jpg" alt="Nossa História">
+
+    
+    <div class="intro-content">
+        <h2>Desde 2000 moldando o futuro da mineração</h2>
+        <p>A <strong>Terra Mineral</strong> nasceu em Tijucas-SC para integrar alta tecnologia de mapeamento às demandas rigorosas do setor mineral brasileiro.</p>
+        
+        <div class="highlight-box">
+            <p>Missão: Fornecer dados geoespaciais de altíssima precisão que garantam segurança e sustentabilidade.</p>
         </div>
-        <div class="history-content">
-          <h2>Desde 2000 moldando o futuro da mineração</h2>
-          <p>A Terra Mineral nasceu da necessidade de integrar alta tecnologia de mapeamento com as demandas rigorosas do setor mineral brasileiro. Fundada em Tijucas-SC, iniciamos nossa jornada com pequenos levantamentos topográficos.</p>
-          <p>Hoje, somos referência em <strong>LiDAR</strong> e <strong>Batimetria</strong>, atendendo as maiores mineradoras do país com uma equipe técnica multidisciplinar e equipamentos de última geração.</p>
-          <p>Nossa missão é fornecer dados geoespaciais de altíssima precisão que garantam a segurança operacional e a sustentabilidade ambiental de nossos parceiros.</p>
+        
+        <p style="margin-top: 20px;">Hoje somos referência em LiDAR e Batimetria, atendendo as maiores mineradoras do país.</p>
+    </div>
+
+    <div class="timeline-flow">
+        
+        <div class="step">
+            <div class="step-dot"></div>
+            <span class="step-date">2000</span>
+            <div class="step-info">
+                <h4>Fundação</h4>
+                <p>Início das atividades focando em topografia convencional e agrimensura.</p>
+            </div>
         </div>
-      </div>
-    </section>
+
+        <div class="step">
+            <div class="step-dot"></div>
+            <span class="step-date">2012</span>
+            <div class="step-info">
+                <h4>Expansão Mineral</h4>
+                <p>Especialização em grandes complexos mineradores e monitoramento de pilhas.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-dot"></div>
+            <span class="step-date">2020</span>
+            <div class="step-info">
+                <h4>Era LiDAR</h4>
+                <p>Implementação de varredura a laser, revolucionando a precisão em áreas densas.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-dot"></div>
+            <span class="step-date">Hoje</span>
+            <div class="step-info">
+                <h4>Referência Nacional</h4>
+                <p>Liderança técnica em Geotecnologias aplicadas à Engenharia e Meio Ambiente.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <section class="team-section">
       <div class="container">
@@ -97,13 +142,95 @@
     </section>
   </main>
 
-  <footer style="background: var(--primary-dark); color: white; padding: 40px 0; text-align: center; font-size: 14px; margin-top: 80px;">
-    <div class="container">
-      <p>&copy; 2026 Terra Mineral. Todos os direitos reservados.</p>
+ <footer class="footer-main">
+  <div class="container footer-grid">
+    
+   <div class="footer-col about-col">
+  <div class="footer-logo-container">
+    <div class="logo-frame">
+      <img src="../../imgs/TerraMineralLogo.png" alt="Terra Mineral" class="footer-logo">
     </div>
-  </footer>
+    <div class="footer-brand-text">
+      <span class="brand-title">TERRA MINERAL</span>
+      <span class="brand-subtitle">MINERAÇÃO E MEIO AMBIENTE</span>
+    </div>
+  </div>
+  <p class="footer-description">
+    Líder em soluções de engenharia com tecnologia <strong>LiDAR</strong> e precisão científica. Transformando dados complexos em decisões seguras.
+  </p>
+      <div class="social-icons">
+        <a href="#" class="social-link" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#" class="social-link" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Serviços Técnicos</a></li>
+        <li><a href="./frontend/html/sobre.html">Sobre a Empresa</a></li>
+        <li><a href="#contact">Solicitar Orçamento</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Especialidades</h4>
+      <ul class="footer-specialties">
+        <li><span class="dot"></span> Batimetria Técnica</li>
+        <li><span class="dot"></span> Topografia LiDAR</li>
+        <li><span class="dot"></span> Geofísica Terrestre</li>
+        <li><span class="dot"></span> Consultoria Mineral</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contatos</h4>
+      <div class="footer-contact-card">
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>Telefone</span>
+            <strong>(48) 9157-3130</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>E-mail</span>
+            <strong>comercial@terramineral.com.br</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="contact-text">
+            <span>Localização</span>
+            <strong>Tijucas - Santa Catarina, Brasil</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <p>&copy; 2026 <strong>Terra Mineral</strong>. Excelência em Geotecnologia.</p>
+      <div class="footer-tags">
+        <span class="crea-tag">Registro: CREA-SC</span>
+        <span class="status-tag"><span class="pulse"></span> Online para Orçamentos</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <a href="#" id="backToTop" class="back-to-top">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="white"/>
+    </svg>
+</a>
 </body>
 </html>
